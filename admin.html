@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>DriveSchool — Админ-панель</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a class="logo" href="index.html">DRIVE<span>•</span>SCHOOL</a
+      ><a class="wa-mini" href="index.html">На сайт ↗</a>
+    </header>
+    <main class="admin-page">
+      <p class="eyebrow">CONTROL ROOM / ADMIN ONLY</p>
+      <h1>ПАНЕЛЬ<br /><i>УПРАВЛЕНИЯ.</i></h1>
+      <div id="adminLogin" class="admin-login">
+        <h3>Вход администратора</h3>
+        <form id="loginForm">
+          <input id="email" type="email" placeholder="E-mail" required /><input
+            id="password"
+            type="password"
+            placeholder="Пароль"
+            required
+          /><button class="button">Войти <b>→</b></button>
+        </form>
+        <p id="loginNote" class="form-note"></p>
+      </div>
+      <div id="adminArea" hidden>
+        <section class="admin-grid">
+          <article>
+            <p class="eyebrow">НАСТРОЙКИ САЙТА</p>
+            <h3>Внешний вид и связь</h3>
+            <form id="settingsForm">
+              <label>Акцентный цвет<input id="accent" type="color" /></label
+              ><label
+                >WhatsApp номер<input
+                  id="phone"
+                  placeholder="+77051211473" /></label
+              ><button class="button">Сохранить <b>→</b></button>
+            </form>
+          </article>
+          <article>
+            <p class="eyebrow">НОВЫЙ МАТЕРИАЛ</p>
+            <h3>Публикация в журнал</h3>
+            <form id="postForm">
+              <label>Заголовок<input id="title" required /></label
+              ><label>Короткое описание<input id="excerpt" /></label
+              ><label
+                >Полный текст<textarea
+                  id="content"
+                  required
+                  rows="5"
+                ></textarea></label
+              ><label
+                >Загрузить фото или видео (до 50 МБ)<input
+                  id="mediaFile"
+                  type="file"
+                  accept="image/*,video/*" /></label
+              ><label
+                >Или ссылка на фото / видео<input
+                  id="mediaUrl"
+                  type="url" /></label
+              ><label
+                >Тип<select id="mediaType">
+                  <option value="image">Фото</option>
+                  <option value="video">Видео</option>
+                </select></label
+              ><button class="button">Опубликовать <b>→</b></button>
+            </form>
+          </article>
+        </section>
+        <section class="admin-posts">
+          <p class="eyebrow">ОПУБЛИКОВАНО</p>
+          <h2>Материалы</h2>
+          <div id="adminPosts"></div>
+        </section>
+      </div>
+    </main>
+    <div class="toast" id="toast"></div>
+    <script src="admin.js"></script>
+  </body>
+</html>
